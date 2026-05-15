@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "description": "Per-zone planting calendars for GNA's five Zambian agroecological zones. Day ranges are days_since_planting. Each zone has its own planting_window because rainfall onset and soil temperature differ. Topics + templates are reused across zones except where the agronomic guidance varies (e.g. Zone IIa needs more aggressive weed management due to higher pest pressure; Zone III gets later top-dressing because rainfall extends longer).",
+    "source": "GNA_Analytics_Showdown_Final.ipynb \u00a72.4 + agronomy literature for Zambia"
+  },
+
+  "I": {
+    "_zone_meta": {
+      "name": "Eastern Plateau",
+      "planting_window_start": "2024-11-01",
+      "planting_window_end":   "2024-11-25",
+      "rainfall_pattern":      "moderate, reliable Nov-Mar",
+      "median_yield_kg_ha":    290,
+      "notes":                 "Smallest cohort (134 farmers) but reasonable yields. Plant early to capture full rains."
+    },
+    "phases": {
+      "day_0_7":     { "phase": "planting",     "topic": "inoculant_confirmation", "template": "Confirm inoculant applied at planting. Mention the +545 kg/ha lift this gives Zone I farmers (highest of any zone). Ask about seed quantity used.",                  "reply_options": {"1": "done", "2": "need_help", "3": "skip"} },
+      "day_8_14":    { "phase": "planting",     "topic": "spacing_check",          "template": "Ask about row spacing. Ideal is 45-50cm for soy bean. Encourage if on track.",                                                                                                  "reply_options": {"1": "correct_spacing", "2": "not_sure", "3": "skip"} },
+      "day_15_30":   { "phase": "early_growth", "topic": "weed_management",        "template": "First weeding reminder. Weeds in first 30 days steal nutrients. Ask if they have weeded.",                                                                                       "reply_options": {"1": "done", "2": "need_help", "3": "not_yet"} },
+      "day_31_45":   { "phase": "early_growth", "topic": "pest_scouting",          "template": "Ask farmer to check for pests. Eastern Plateau sees pod borer + stink bug most often. Describe holes, discolouration.",                                                          "reply_options": {"1": "no_pests", "2": "found_pests", "3": "skip"} },
+      "day_46_60":   { "phase": "mid_season",   "topic": "top_dressing",           "template": "Top-dressing fertilizer reminder if in loan package. Apply now while rains are still reliable.",                                                                                  "reply_options": {"1": "done", "2": "need_help", "3": "no_fertilizer"} },
+      "day_61_75":   { "phase": "mid_season",   "topic": "pod_check",              "template": "Pods should be forming. Ask farmer to count pods on a sample plant. If <20 pods, may indicate pollination stress.",                                                              "reply_options": {"1": "good_pod_count", "2": "low_pods", "3": "not_sure"} },
+      "day_76_90":   { "phase": "late_season",  "topic": "harvest_prep",           "template": "Maturity approaches. Pods turning yellow-brown, leaves dropping = ready in 7-10 days. Discuss harvest plan.",                                                                    "reply_options": {"1": "ready_to_harvest", "2": "need_advice", "3": "later_check_in"} },
+      "day_91_120":  { "phase": "harvest",      "topic": "buyback_logistics",      "template": "Confirm harvest date. Remind: drying to 12% moisture before delivery. Confirm buyback collection logistics.",                                                                    "reply_options": {"1": "scheduled", "2": "need_help", "3": "delayed"} }
+    }
+  },
+
+  "IIa": {
+    "_zone_meta": {
+      "name": "Central Plateau",
+      "planting_window_start": "2024-11-15",
+      "planting_window_end":   "2024-12-15",
+      "rainfall_pattern":      "variable, drought risk in Jan-Feb",
+      "median_yield_kg_ha":    288,
+      "notes":                 "Largest cohort (15,952 farmers) and lowest median yield. 81% of all high-risk farmers concentrate here. Highest priority zone for field-agent contact."
+    },
+    "phases": {
+      "day_0_7":     { "phase": "planting",     "topic": "inoculant_confirmation", "template": "Confirm inoculant applied. In Zone IIa, inoculant adds about +191 kg/ha after zone control. Combined with training, much higher.",                                                "reply_options": {"1": "done", "2": "need_help", "3": "skip"} },
+      "day_8_14":    { "phase": "planting",     "topic": "spacing_check",          "template": "Row spacing check. 45-50cm for soy bean. Zone IIa farmers benefit most from precise spacing because every kg counts.",                                                            "reply_options": {"1": "correct_spacing", "2": "not_sure", "3": "skip"} },
+      "day_15_30":   { "phase": "early_growth", "topic": "weed_management",        "template": "Weeding window. Zone IIa has higher weed pressure than other zones. Hoe between rows. Untreated weeds = direct yield loss.",                                                       "reply_options": {"1": "done", "2": "need_help", "3": "not_yet"} },
+      "day_25_35":   { "phase": "early_growth", "topic": "drought_check",          "template": "Zone IIa drought risk window. Ask if rainfall has been adequate. If leaves are curling or soil is dry, advise mulching to retain moisture.",                                       "reply_options": {"1": "rain_ok", "2": "dry_concerns", "3": "skip"} },
+      "day_31_45":   { "phase": "early_growth", "topic": "pest_scouting",          "template": "Pest scouting. Zone IIa sees soybean aphid + pod borer. Check leaves for holes. >5 insects/plant = apply insecticide.",                                                            "reply_options": {"1": "no_pests", "2": "found_pests", "3": "skip"} },
+      "day_46_60":   { "phase": "mid_season",   "topic": "top_dressing",           "template": "Top-dressing reminder. In Zone IIa, fertilizer x training together is the strongest yield lever. Apply now.",                                                                     "reply_options": {"1": "done", "2": "need_help", "3": "no_fertilizer"} },
+      "day_61_75":   { "phase": "mid_season",   "topic": "pod_check",              "template": "Pod-formation check. With Zone IIa's variable rains, water stress at pod fill is the #1 cause of low yield. Mulch retains moisture.",                                              "reply_options": {"1": "good_pods", "2": "low_pods", "3": "not_sure"} },
+      "day_76_90":   { "phase": "late_season",  "topic": "harvest_prep",           "template": "Maturity nearing. Plan harvest. In Zone IIa, late-season heat can shatter pods, do not delay once pods are brown.",                                                                "reply_options": {"1": "ready", "2": "need_advice", "3": "later"} },
+      "day_91_120":  { "phase": "harvest",      "topic": "buyback_logistics",      "template": "Confirm harvest. Drying to 12%. Buyback collection logistics. If farmer cannot fully repay in kind, flag immediately for soft renegotiation.",                                     "reply_options": {"1": "scheduled", "2": "shortfall_concern", "3": "delayed"} }
+    }
+  },
+
+  "IIb": {
+    "_zone_meta": {
+      "name": "Southern Plateau",
+      "planting_window_start": "2024-11-20",
+      "planting_window_end":   "2024-12-20",
+      "rainfall_pattern":      "lower total, late onset",
+      "median_yield_kg_ha":    402,
+      "notes":                 "Small cohort (442 farmers). Lower rainfall but higher per-farmer yield than IIa."
+    },
+    "phases": {
+      "day_0_7":     { "phase": "planting",     "topic": "inoculant_confirmation", "template": "Confirm inoculant applied. Critical in IIb where soil nitrogen is often limiting.",                                                                                                  "reply_options": {"1": "done", "2": "need_help", "3": "skip"} },
+      "day_8_14":    { "phase": "planting",     "topic": "spacing_check",          "template": "Row spacing 45-50cm. Slightly wider OK in IIb to conserve soil moisture.",                                                                                                          "reply_options": {"1": "correct_spacing", "2": "not_sure", "3": "skip"} },
+      "day_15_30":   { "phase": "early_growth", "topic": "weed_management",        "template": "Weed early. In IIb's drier conditions, weeds compete heavily for moisture.",                                                                                                          "reply_options": {"1": "done", "2": "need_help", "3": "not_yet"} },
+      "day_31_45":   { "phase": "early_growth", "topic": "moisture_management",    "template": "Mulch around plants if rainfall has been below average. IIb often experiences mid-season dry spells.",                                                                                "reply_options": {"1": "mulched", "2": "need_help", "3": "skip"} },
+      "day_46_60":   { "phase": "mid_season",   "topic": "top_dressing",           "template": "Top-dressing if in package. Apply just before expected rain to avoid scorch.",                                                                                                       "reply_options": {"1": "done", "2": "need_help", "3": "no_fertilizer"} },
+      "day_61_75":   { "phase": "mid_season",   "topic": "pod_check",              "template": "Pod fill stage. Water stress now causes pod abortion. If dry, irrigate if possible.",                                                                                                "reply_options": {"1": "good_pods", "2": "stress_signs", "3": "not_sure"} },
+      "day_76_90":   { "phase": "late_season",  "topic": "harvest_prep",           "template": "Maturity check. Plan harvest schedule. Drying may be faster in IIb.",                                                                                                               "reply_options": {"1": "ready", "2": "need_advice", "3": "later"} },
+      "day_91_120":  { "phase": "harvest",      "topic": "buyback_logistics",      "template": "Confirm buyback. Drying to 12%. Logistics confirmation.",                                                                                                                            "reply_options": {"1": "scheduled", "2": "shortfall_concern", "3": "delayed"} }
+    }
+  },
+
+  "III": {
+    "_zone_meta": {
+      "name": "Northern Plateau",
+      "planting_window_start": "2024-11-01",
+      "planting_window_end":   "2024-11-30",
+      "rainfall_pattern":      "high total, long season",
+      "median_yield_kg_ha":    848,
+      "notes":                 "Highest median yield (848 kg/ha) but only 6,069 farmers. Lwangeni variety dominates and explains much of the lift."
+    },
+    "phases": {
+      "day_0_7":     { "phase": "planting",     "topic": "variety_check",          "template": "Confirm seed variety. Lwangeni gives Zone III farmers the highest yields (1,200 kg/ha median). If using anything else, ask why.",                                                  "reply_options": {"1": "lwangeni", "2": "other_variety", "3": "not_sure"} },
+      "day_8_14":    { "phase": "planting",     "topic": "spacing_check",          "template": "Row spacing 45-50cm. Zone III's longer rains support tighter spacing.",                                                                                                            "reply_options": {"1": "correct_spacing", "2": "not_sure", "3": "skip"} },
+      "day_15_30":   { "phase": "early_growth", "topic": "weed_management",        "template": "Weeding window. Zone III's high rainfall encourages rapid weed growth, weed twice in first 45 days.",                                                                              "reply_options": {"1": "done", "2": "need_help", "3": "not_yet"} },
+      "day_31_45":   { "phase": "early_growth", "topic": "fungicide_window",       "template": "Zone III high humidity = soybean rust risk. If fungicide is in your loan package, apply at first sign of yellow spots on lower leaves.",                                            "reply_options": {"1": "no_signs", "2": "applied", "3": "need_help"} },
+      "day_46_60":   { "phase": "mid_season",   "topic": "top_dressing",           "template": "Top-dressing window. Zone III rains allow late application without scorch.",                                                                                                       "reply_options": {"1": "done", "2": "need_help", "3": "no_fertilizer"} },
+      "day_61_75":   { "phase": "mid_season",   "topic": "pod_check",              "template": "Pod-fill window. Zone III conditions usually favor heavy pod set. Check pod count on sample plants.",                                                                              "reply_options": {"1": "heavy_pods", "2": "average", "3": "low"} },
+      "day_76_90":   { "phase": "late_season",  "topic": "harvest_prep",           "template": "Approaching maturity. Zone III moisture means slower drying, plan accordingly.",                                                                                                  "reply_options": {"1": "ready", "2": "need_advice", "3": "later"} },
+      "day_91_125":  { "phase": "harvest",      "topic": "buyback_logistics",      "template": "Confirm harvest date. Drying may take longer due to Zone III humidity. Logistics confirmation.",                                                                                  "reply_options": {"1": "scheduled", "2": "drying_issue", "3": "delayed"} }
+    }
+  },
+
+  "IV": {
+    "_zone_meta": {
+      "name": "Western Plain",
+      "planting_window_start": "2024-11-10",
+      "planting_window_end":   "2024-12-10",
+      "rainfall_pattern":      "sandy soils, short season",
+      "median_yield_kg_ha":    320,
+      "notes":                 "Sandy soils retain less water. Few GNA farmers in this zone."
+    },
+    "phases": {
+      "day_0_7":     { "phase": "planting",     "topic": "inoculant_confirmation", "template": "Confirm inoculant. On sandy IV soils, inoculant + organic matter is essential.",                                                                                                    "reply_options": {"1": "done", "2": "need_help", "3": "skip"} },
+      "day_8_14":    { "phase": "planting",     "topic": "spacing_check",          "template": "Row spacing 45cm. Tight spacing helps shade soil and conserve moisture.",                                                                                                            "reply_options": {"1": "correct_spacing", "2": "not_sure", "3": "skip"} },
+      "day_15_30":   { "phase": "early_growth", "topic": "moisture_management",    "template": "Mulch is critical on sandy IV soils. Cover bare soil between rows with crop residue.",                                                                                              "reply_options": {"1": "mulched", "2": "need_help", "3": "skip"} },
+      "day_31_45":   { "phase": "early_growth", "topic": "pest_scouting",          "template": "Pest scouting. Aphids and thrips active. Check leaves daily.",                                                                                                                       "reply_options": {"1": "no_pests", "2": "found_pests", "3": "skip"} },
+      "day_46_60":   { "phase": "mid_season",   "topic": "top_dressing",           "template": "Apply top-dressing after a rain event. Sandy soils leach nutrients quickly.",                                                                                                       "reply_options": {"1": "done", "2": "need_help", "3": "no_fertilizer"} },
+      "day_61_75":   { "phase": "mid_season",   "topic": "pod_check",              "template": "Pod-fill stage. Water stress = pod abortion on sandy soils.",                                                                                                                        "reply_options": {"1": "good_pods", "2": "stress_signs", "3": "not_sure"} },
+      "day_76_90":   { "phase": "late_season",  "topic": "harvest_prep",           "template": "Maturity check. Harvest planning.",                                                                                                                                                  "reply_options": {"1": "ready", "2": "need_advice", "3": "later"} },
+      "day_91_120":  { "phase": "harvest",      "topic": "buyback_logistics",      "template": "Confirm buyback. Drying. Logistics.",                                                                                                                                                "reply_options": {"1": "scheduled", "2": "shortfall_concern", "3": "delayed"} }
+    }
+  }
+}

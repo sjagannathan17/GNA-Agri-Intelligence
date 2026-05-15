@@ -1,0 +1,62 @@
+{
+  "day_0_7": {
+    "phase": "planting",
+    "topic": "inoculant_confirmation",
+    "template": "Confirm inoculant applied at planting. Mention the 486 kg/ha benefit. Ask about seed quantity.",
+    "reply_options": {"1": "done", "2": "need_help", "3": "skip"}
+  },
+  "day_8_14": {
+    "phase": "planting",
+    "topic": "spacing_check",
+    "template": "Ask about row spacing. Ideal is 45-50cm for soy bean. Encourage if on track.",
+    "reply_options": {"1": "correct_spacing", "2": "not_sure", "3": "skip"}
+  },
+  "day_15_30": {
+    "phase": "early_growth",
+    "topic": "weed_management",
+    "template": "First weeding reminder. Weeds in first 30 days steal nutrients. Ask if they've weeded.",
+    "reply_options": {"1": "done", "2": "need_help", "3": "not_yet"}
+  },
+  "day_31_45": {
+    "phase": "early_growth",
+    "topic": "pest_scouting",
+    "template": "Ask farmer to check for pests on leaves. Describe common signs: holes, discolouration.",
+    "reply_options": {"1": "no_pests", "2": "found_pests", "3": "skip"}
+  },
+  "day_46_60": {
+    "phase": "mid_season",
+    "topic": "top_dressing",
+    "template": "Top dressing fertilizer reminder if in loan package. Timing matters — now is the window.",
+    "reply_options": {"1": "done", "2": "need_help", "3": "no_fertilizer"}
+  },
+  "day_61_75": {
+    "phase": "mid_season",
+    "topic": "yield_estimate",
+    "template": "Ask farmer to estimate their expected harvest in bags. This helps GNA plan storage for them.",
+    "reply_options": {"1": "less_than_5_bags", "2": "5_to_15_bags", "3": "more_than_15_bags"}
+  },
+  "day_76_90": {
+    "phase": "mid_season",
+    "topic": "disease_check",
+    "template": "Ask about any yellowing, wilting, or fungal signs. Remind about fungicide if received.",
+    "reply_options": {"1": "plants_healthy", "2": "some_issues", "3": "major_problems"}
+  },
+  "day_91_105": {
+    "phase": "pre_harvest",
+    "topic": "harvest_timing",
+    "template": "Guide on maturity signs: leaves yellowing and falling, pods turning brown. Do not harvest too early.",
+    "reply_options": {"1": "almost_ready", "2": "not_yet", "3": "skip"}
+  },
+  "day_106_120": {
+    "phase": "pre_harvest",
+    "topic": "drying_reminder",
+    "template": "Remind about drying to 12% moisture before buyback. Wet grain is rejected. Confirm buyback date.",
+    "reply_options": {"1": "understood", "2": "need_transport_help", "3": "skip"}
+  },
+  "day_121_135": {
+    "phase": "harvest",
+    "topic": "buyback_confirmation",
+    "template": "Confirm buyback date and location. Remind about grade A quality requirements for best price.",
+    "reply_options": {"1": "confirmed", "2": "need_date_change", "3": "skip"}
+  }
+}

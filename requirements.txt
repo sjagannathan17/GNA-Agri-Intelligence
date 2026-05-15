@@ -1,0 +1,13 @@
+anthropic>=0.25.0
+fastapi>=0.110.0
+uvicorn>=0.27.0
+httpx>=0.26.0
+apscheduler>=3.10.0
+python-dotenv>=1.0.0
+
+# Intelligent chat — Phase 2
+tavily-python>=0.3.0
+duckduckgo-search>=5.0
+langdetect>=1.0.9
+rapidfuzz>=3.0
+pandas>=2.0.0

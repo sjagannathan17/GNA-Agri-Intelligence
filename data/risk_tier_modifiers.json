@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "description": "Per-risk-tier nudge cadence + tone modifiers. Applied on top of the per-zone calendar in season_calendar_by_zone.json. The NudgeSchedulerAgent uses cadence_days to decide whether a farmer is due for a nudge today.",
+    "source": "GNA_Analytics_Showdown_Final.ipynb \u00a76 risk tiers"
+  },
+
+  "High": {
+    "_threshold":      "risk_score >= 0.35 (F2-optimal, train-OOF)",
+    "cadence_days":    3,
+    "tone":            "urgent_supportive",
+    "tone_guidance":   "This farmer is at high risk of not selling back. Be warm and personal but get to the point quickly. Use their name. Be concrete: 'Visit your field today and check X.' Always offer the option to escalate to a field agent ('reply 2 if you need help and we will call you'). Avoid alarmist language; framing should be 'we are here to help you finish strong'.",
+    "include_escalation_option":  true,
+    "auto_escalate_after_help":   1,
+    "include_peer_benchmark":     true,
+    "extra_topics_per_phase":     ["repayment_check_in", "field_agent_intro"]
+  },
+
+  "Medium": {
+    "_threshold":      "0.20 <= risk_score < 0.35",
+    "cadence_days":    7,
+    "tone":            "supportive",
+    "tone_guidance":   "This farmer is moderately at risk. A weekly check-in reminder is appropriate. Encourage good practices, celebrate progress, gently reinforce repayment commitment.",
+    "include_escalation_option":  true,
+    "auto_escalate_after_help":   2,
+    "include_peer_benchmark":     true,
+    "extra_topics_per_phase":     []
+  },
+
+  "Low": {
+    "_threshold":      "risk_score < 0.20",
+    "cadence_days":    14,
+    "tone":            "light_friendly",
+    "tone_guidance":   "This farmer is on track. Light bi-weekly check-ins to reinforce good behavior and gather data. Brief, friendly, mostly informational.",
+    "include_escalation_option":  false,
+    "auto_escalate_after_help":   3,
+    "include_peer_benchmark":     false,
+    "extra_topics_per_phase":     []
+  }
+}

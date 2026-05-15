@@ -1,0 +1,60 @@
+{
+  "crops": {
+    "soy_bean": {
+      "planting_window": "November 15 – December 15",
+      "row_spacing_cm": 45,
+      "seed_rate_kg_ha": 80,
+      "maturity_days": 90,
+      "key_inputs": ["inoculant", "fertilizer", "fungicide"],
+      "common_pests": ["soybean_aphid", "stink_bug", "pod_borer"],
+      "common_diseases": ["frogeye_leaf_spot", "soybean_rust", "root_rot"],
+      "harvest_moisture_pct": 12
+    },
+    "maize": {
+      "planting_window": "November 15 – December 10",
+      "row_spacing_cm": 75,
+      "seed_rate_kg_ha": 25,
+      "maturity_days": 120,
+      "key_inputs": ["fertilizer", "seed_guard"],
+      "common_pests": ["fall_armyworm", "stalk_borer", "aphids"],
+      "common_diseases": ["grey_leaf_spot", "northern_corn_leaf_blight"],
+      "harvest_moisture_pct": 13
+    },
+    "groundnut": {
+      "planting_window": "November 20 – December 20",
+      "row_spacing_cm": 45,
+      "seed_rate_kg_ha": 100,
+      "maturity_days": 110,
+      "key_inputs": ["gypsum", "inoculant"],
+      "common_pests": ["aphids", "thrips", "leaf_miner"],
+      "common_diseases": ["early_leaf_spot", "late_leaf_spot", "rosette"],
+      "harvest_moisture_pct": 10
+    }
+  },
+  "diagnostics": {
+    "yellow_leaf_tips": {
+      "likely_cause": "nitrogen deficiency or inoculant failure",
+      "action": "Check inoculant application. If tips are yellow and moving inward, apply nitrogen top dressing."
+    },
+    "stunted_growth": {
+      "likely_cause": "waterlogging, compacted soil, or lack of fertilizer",
+      "action": "Check drainage. If soil is wet, make drainage furrows. If dry, consider foliar fertilizer."
+    },
+    "holes_in_leaves": {
+      "likely_cause": "pod borer or stink bug",
+      "action": "Scout at dawn. If >5 insects per plant, apply insecticide from loan package."
+    },
+    "brown_pods_early": {
+      "likely_cause": "premature ripening or disease",
+      "action": "Do not harvest yet. Check if leaves are still green. If leaves also brown, may be normal maturity."
+    }
+  },
+  "gna_model_insights": {
+    "inoculant_yield_lift_kg_ha": 486,
+    "season_1_yield_factor": 0.304,
+    "season_3plus_yield_factor": 1.0,
+    "non_buyback_rate": 0.23,
+    "high_risk_threshold": 0.45,
+    "procurement_forecast_kg": {"low": 2100000, "mid": 2600000, "high": 3200000}
+  }
+}
