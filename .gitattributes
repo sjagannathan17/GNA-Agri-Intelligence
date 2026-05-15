@@ -1,0 +1,5 @@
+# Mark dashboard build output and lock files as vendored
+dashboard/build/** linguist-generated
+dashboard/dist/** linguist-generated
+dashboard/package-lock.json linguist-vendored
+dashboard/node_modules/** linguist-vendored
