@@ -148,8 +148,8 @@ A **5-agent orchestrated system** that pushes (nudges) and pulls (chat), with a 
 ## Quick Start
 
 ```bash
-git clone https://github.com/sjagannathan17/GNA-Agri-Intelligence.git
-cd GNA-Agri-Intelligence
+git clone https://github.com/sjagannathan17/agri-intelligence-platform.git
+cd agri-intelligence-platform
 pip install -r requirements.txt
 
 cp .env.example .env # Bundled placeholders are enough to run end-to-end
